@@ -10,10 +10,7 @@ import UIKit
 
 class HaikuPostViewController: UIViewController {
     
-    @IBOutlet var haiku1Label: UILabel!
-    @IBOutlet var haiku2Label: UILabel!
-    @IBOutlet var haiku3Label: UILabel!
-    @IBOutlet var imageView: UIImageView!
+    //IBOutletここに書く
     
     let photo: Photo
     
@@ -28,18 +25,13 @@ class HaikuPostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let haikuString = try! Util.breakHaiku(photo.haiku)
-        haiku1Label.text = haikuString.haiku1.tategaki
-        haiku2Label.text = haikuString.haiku2.tategaki
-        haiku3Label.text = haikuString.haiku3.tategaki
-        imageView.image = photo.processedData!.jpeg()!
+        // ラベルとかセットする
     }
     
-    @IBAction func post() {
-        Util.postPhoto(photo)
-        self.dismiss(animated: true)
-    }
+    //IBActionここ
 }
+
+//ここはいじらない
 struct HaikuPostView: UIViewControllerRepresentable {
     
     let vc: HaikuPostViewController
